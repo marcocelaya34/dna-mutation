@@ -16,17 +16,17 @@ This Node.js project is a genetic mutation detector based on DNA sequences. It u
 
 If you would like to try the DNA Mutation Detector, you can access the Swagger user interface at the following URL:
 
-[Swagger API Documentation](http://dna-mutation-399019.uc.r.appspot.com/api-docs)
+[Swagger API Documentation](https://dna-mutation-399019.uc.r.appspot.com/api-docs)
 
 You can also check the project's test coverage at the following URL:
 
-[Coverage Report](http://dna-mutation-399019.uc.r.appspot.com/coverage/lcov-report/index.html)
+[Coverage Report](https://dna-mutation-399019.uc.r.appspot.com/coverage/lcov-report/index.html)
 
 ## URL
 
 The Base URL of this project is this:
 
-[http://dna-mutation-399019.uc.r.appspot.com/](http://dna-mutation-399019.uc.r.appspot.com/)
+[https://dna-mutation-399019.uc.r.appspot.com/](https://dna-mutation-399019.uc.r.appspot.com/)
 
 
 ## Endpoints API
