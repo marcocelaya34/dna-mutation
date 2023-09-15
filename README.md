@@ -39,30 +39,36 @@ The project includes the following API endpoints:
 
   Without Mutation
    ```cURL
-   curl --location --request GET 'https://dna-mutation-399019.uc.r.appspot.com/statics' \
-    --data '{
-        "dna": [
-            "ATGCAA",
-            "CAGTGC",
-            "TTATGT",
-            "AGATGG",
-            "CGCCTA",
-            "TCACTG"
-        ]
+   curl -X 'POST' \
+      'https://dna-mutation-399019.uc.r.appspot.com/mutation/' \
+      -H 'accept: application/json' \
+      -H 'Content-Type: application/json' \
+      -d '{
+      "dna": [
+        "ATGCAA",
+        "CAGTGC",
+        "TTATGT",
+        "AGATGG",
+        "CGCCTA",
+        "TCACTG"
+      ]
     }'
    ```
   With Mutation
   ```cURL
-   curl --location 'https://dna-mutation-399019.uc.r.appspot.com/mutation/' \
-    --data '{
-        "dna": [
-            "ATGCGA",
-            "CAGTGC",
-            "TTATGT",
-            "AGAAGG",
-            "CCCCTA",
-            "TCACTG"
-        ]
+   curl -X 'POST' \
+      'https://dna-mutation-399019.uc.r.appspot.com/mutation/' \
+      -H 'accept: application/json' \
+      -H 'Content-Type: application/json' \
+      -d '{
+      "dna": [
+        "ATGCGA",
+        "CAGTGC",
+        "TTATGT",
+        "AGAAGG",
+        "CCCCTA",
+        "TCACTG"
+      ]
     }'
    ```
 
