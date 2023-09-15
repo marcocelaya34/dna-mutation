@@ -1,96 +1,125 @@
-# Detector de Mutaciones de ADN
+# DNA Mutation Detector
 
-Este proyecto en Node.js es un detector de mutaciones genéticas basado en secuencias de ADN. Utiliza algoritmos para analizar secuencias de ADN y determinar si tiene diferencias genéticas.
+This Node.js project is a genetic mutation detector based on DNA sequences. It uses algorithms to analyze DNA sequences and determine if you have genetic differences.
 
-## Características
+## Characteristics
 
-- Detección de mutaciones genéticas en secuencias de ADN.
-- Uso de una base de datos NoSQL en MongoDB Atlas para almacenar datos.
-- La API está hosteada en Google App Engine.
-- Interfaz de usuario basada en Swagger para facilitar las pruebas y la interacción.
-- Cobertura de pruebas para garantizar la precisión y fiabilidad del detector.
-- Consulta de estadísticas de ADN con y sin mutación, incluyendo el ratio.
+- Detection of genetic mutations in DNA sequences.
+- Consultation of DNA statistics with and without mutation, including the ratio.
+- Using a NoSQL database in MongoDB Atlas to store data.
+- The API is hosted on Google App Engine.
+- Swagger-based user interface for easy testing and interaction.
+- Test coverage to ensure detector accuracy and reliability.
 
 
-## Uso
+## Use
 
-Si deseas probar el detector de mutaciones de ADN, puedes acceder a la interfaz de usuario de Swagger en el siguiente URL:
+If you would like to try the DNA Mutation Detector, you can access the Swagger user interface at the following URL:
 
 [Swagger API Documentation](http://dna-mutation-399019.uc.r.appspot.com/api-docs)
 
-También puedes verificar la cobertura de pruebas del proyecto en el siguiente URL:
+You can also check the project's test coverage at the following URL:
 
 [Coverage Report](http://dna-mutation-399019.uc.r.appspot.com/coverage/lcov-report/index.html)
 
 ## URL
 
-La URL Base de este proyecto es esta:
+The Base URL of this project is this:
 
 [http://dna-mutation-399019.uc.r.appspot.com/](http://dna-mutation-399019.uc.r.appspot.com/)
 
 
 ## Endpoints API
 
-El proyecto incluye los siguientes endpoints API:
+The project includes the following API endpoints:
 
 - **POST → /mutation/**
+  
+  This endpoint allows detecting genetic mutations in a DNA sequence.
 
-  ```json
-  {
-    "dna": ["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"]
-  }
-  ```
+  Without Mutation
+   ```cURL
+   curl --location --request GET 'https://dna-mutation-399019.uc.r.appspot.com/statics' \
+    --data '{
+        "dna": [
+            "ATGCAA",
+            "CAGTGC",
+            "TTATGT",
+            "AGATGG",
+            "CGCCTA",
+            "TCACTG"
+        ]
+    }'
+   ```
+  With Mutation
+  ```cURL
+   curl --location 'https://dna-mutation-399019.uc.r.appspot.com/mutation/' \
+    --data '{
+        "dna": [
+            "ATGCGA",
+            "CAGTGC",
+            "TTATGT",
+            "AGAAGG",
+            "CCCCTA",
+            "TCACTG"
+        ]
+    }'
+   ```
 
-  Este endpoint permite detectar mutaciones genéticas en una secuencia de ADN.
+
 
 - **GET → /stats**
 
-  Este endpoint proporciona estadísticas sobre las secuencias de ADN analizadas.
+   This endpoint provides statistics on the analyzed DNA sequences.
 
-## Instalación y Despliegue
+   ```cURL
+   curl --location 'https://dna-mutation-399019.uc.r.appspot.com/stats'
+   ```
 
-Para ejecutar este proyecto en tu entorno local, sigue estos pasos:
+## Installation and Deployment
 
-Clona este repositorio en tu máquina:
+To run this project in your local environment, follow these steps:
+
+Clone this repository to your machine:
 
 ```bash
 git clone https://github.com/marcocelaya34/dna-mutation
 ```
 
-Navega al directorio del proyecto:
+Navigate to the project directory:
 
 ```bash
 cd dna-mutation
 ```
 
-Instala las dependencias del proyecto:
+Install the project dependencies:
 
 ```bash
 npm install
 ```
 
-Inicia la aplicación:
+Start the app:
 
 ```bash
 npm start
 ```
 
-La aplicación estará disponible en http://localhost:8080.
+The application will be available at http://localhost:8080.
 
 
-# Pruebas y Cobertura
-Para ejecutar las pruebas en local, usa el siguiente comando:
+# Testing and Coverage
+To run the tests locally, use the following command:
 
 ```bash
 npm test
 ```
 
-Para revisar la cobertura de pruebas, corre el siguiente comando:
+To review test coverage, run the following command:
 
 ```bash
 npm run coverage
 ```
 
-## Desarrollador
+## Developer
 
-Este proyecto fue desarrollado por Marco Antonio Celaya Ordaz como prueba técnica de nivelación para Teamknowlogy.
+This project was developed by Marco Antonio Celaya Ordaz as a technical leveling test for Teamknowlogy.
