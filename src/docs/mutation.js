@@ -1,12 +1,12 @@
 /**
  * @swagger
  * tags:
- *   name: Mutación de ADN
- *   description: Operaciones relacionadas con la mutación de ADN
+ *   name: DNA Mutation
+ *   description: Operations related to DNA mutation
  * /mutation/:
  *   post:
- *     summary: Verificar mutación de ADN
- *     tags: [Mutación de ADN]
+ *     summary: Verify DNA Mutation
+ *     tags: [DNA Mutation]
  *     requestBody:
  *       required: true
  *       content:
@@ -16,19 +16,32 @@
  *             properties:
  *               dna:
  *                 type: array
- *                 description: Secuencia de ADN a verificar
+ *                 description: DNA sequence to be verified
  *                 example: ["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"]
  *     responses:
  *       200:
- *         description: Mutación detectada
+ *         description: Mutation detected
  *         content:
  *           application/json:
  *             example:
- *               message: Es una mutación
+ *               message: It's a mutation
  *       403:
- *         description: Mutación no detectada
+ *         description: Mutation not detected
  *         content:
  *           application/json:
  *             example:
- *               message: No es una mutación
+ *               message: It's not a mutation
+ * /stats:
+ *   get:
+ *     summary: Get DNA Mutation Stats
+ *     tags: [DNA Mutation]
+ *     responses:
+ *       200:
+ *         description: Mutation Stats
+ *         content:
+ *           application/json:
+ *             example:
+ *               count_mutations: 40
+ *               count_no_mutation: 100
+ *               ratio: 0.4
  */

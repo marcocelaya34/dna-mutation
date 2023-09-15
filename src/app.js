@@ -1,21 +1,26 @@
-const express = require('express');
+const express = require("express");
+const swaggerUi = require("swagger-ui-express");
+const routes = require("./routes/mutation");
+const swaggerSpec = require("./config/swaggerConfig");
+const connectToDatabase = require("./config/databaseConfig");
+require("dotenv").config();
+
 const app = express();
-const port = 3000; 
+const port = process.env.PORT || 8080;
 
-const swaggerUi = require('swagger-ui-express');
-
-const routes = require('./routes/mutation'); 
-
-const swaggerSpec = require('./docs/swaggerConfig'); // Ajusta la ruta según tu estructura
-
-
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-
+// Middleware
 app.use(express.json());
 
-app.use('/', routes);
+// Swagger API documentation
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
+// Routes
+app.use("/", routes);
 
+// Database connection
+connectToDatabase();
+
+// Start server
 app.listen(port, () => {
-  console.log(`Servidor en funcionamiento en http://localhost:${port}`);
+	console.log(`Server is running on port ${port}`);
 });
