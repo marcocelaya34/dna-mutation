@@ -8,11 +8,16 @@ require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 8080;
 
+const path = require("path");
+
 // Middleware
 app.use(express.json());
 
 // Swagger API documentation
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
+// Coverage Information
+app.use("/coverage/", express.static(path.join(__dirname, "../coverage")));
 
 // Routes
 app.use("/", routes);

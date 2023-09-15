@@ -11,11 +11,10 @@ const addDNA = async (dna, mutation) => {
 
 const getDNA = async (mutation) => {
 	try {
-		return await DNA.countDocuments({ mutation }).exec() || [];
+		return await DNA.countDocuments({ mutation }).exec();
 	} catch (error) {
 		throw Error(error);
 	}
-
 };
 
 module.exports = { addDNA, getDNA };
